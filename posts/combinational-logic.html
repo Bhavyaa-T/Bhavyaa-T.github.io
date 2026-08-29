@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Properly using Combinational Logic — Bhavyaa</title>
+
+    <link rel="stylesheet" href="/style.css">
+    
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  async>
+</script>
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">← Home</a>
+    </nav>
+
+    <article>
+
+        <h1>Properly using Combinational Logic</h1>
+
+        <p class="date">
+            <time datetime="2026-08-29">
+                29 August 2026
+            </time>
+        </p>
+            
+        <p>
+            This post aims to explain how we can come up with combinational implementations for sequential-looking algorithms. I want to also showcase some implementations of this that I think are cool. 
+        </p>
+
+        <h2>The theory</h2>
+
+        <p>
+            A good starting point is to consider the recurrence relation $$\mathbf{x_{n+1}} = f(\mathbf{x_{n}})$$ If we're considering a linear system, this would obey the powerful property $$\mathbf{x_{n+k}} = A^{k}\mathbf{x_{n}}$$ Just recognising this alone can save us a significant amount of computation. 
+        </p>
+
+        <h2>A first implementation</h2>
+
+        <p class="code-caption">
+            A simple sequential implementation
+        </p>
+
+        <pre><code>always_ff @(posedge clk) begin
+    if (rst) begin
+        state <= '0;
+    end
+    else begin
+        state <= next_state;
+    end
+end</code></pre>
+
+        <h2>What can we do better?</h2>
+
+        <p>
+            Explanation goes here.
+        </p>
+
+    </article>
+
+    <footer>
+        <a href="/">← Home</a>
+    </footer>
+
+</body>
+
+</html>
